@@ -4,14 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跳转中...</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            display: none; /* 初始状态下隐藏内容 */
+        }
+        .error {
+            color: red;
+        }
+    </style>
     <script>
-        // 当页面加载完成时执行
         document.addEventListener('DOMContentLoaded', function() {
-            // 直接跳转到 Workers 项目
-            window.location.href = 'https://url-redirectu7.u788990.workers.dev';
+            try {
+                // 直接跳转到 Workers 项目
+                window.location.href = 'https://url-redirectu7.u788990.workers.dev';
+            } catch (error) {
+                // 显示错误消息
+                document.body.style.display = 'block'; // 显示内容
+                document.getElementById('error-message').style.display = 'block';
+            }
         });
     </script>
 </head>
 <body>
+    <div id="error-message" class="error">
+        <p>无法访问此网站。</p>
+    </div>
 </body>
 </html>
